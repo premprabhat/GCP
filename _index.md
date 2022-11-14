@@ -1,42 +1,38 @@
 ---
-title: "Elastic Kubernetes Service on Arm-based Instances" 
+title: "Deploying Arm virtual machines on Google Cloud Platform" 
 type: docs
 hide_summary: true
 weight: 3
 description: >
-    Learning path for software developers about how to provision EKS cluster on Arm-based instance and then deployment of Wordpress(with Mysql) on Elastic Kubernetes Service. 
+    Learning path for software developers about how to deploy Arm based VMs on GCP via console and gcloud.
 ---
 
 ## Learning Objectives 
 
 By the end of this learning path, you will be able to:
 
-* Provision EKS cluster on Arm-based instance
-* Deploy Wordpress(with Mysql) on Elastic Kubernetes Service
+* Deploy Arm based VMs on GCP via console.
+* Deploy Arm based VMs on GCP via gcloud.
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account
-* The AWS CLI, [installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
-* [AWS IAM Authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-* The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/), also known as kubectl
-* Terraform
+* An Google Cloud Platform(GCP) account
+* Install the latest version of the [Google Cloud CLI](https://cloud.google.com/compute/docs/gcloud-compute).
 
 ## Sections
 
 |          Type | Content                       |
 | ---           | ---                                 |
-| How-To        | [What is EKS](/content/en/cloud/aws/introduction.md)
-| How-To        | [Provision EKS cluster on Arm-based instance](/content/en/cloud/aws/eks.md) |
-| How-To        | [Deploy Wordpress(with Mysql) on Elastic Kubernetes Service](/content/en/cloud/aws/terraform.md) |
+| How-To        | [Arm based VMs on GCP](/content/en/cloud/GCP/introduction.md)
+| How-To        | [Deploy Arm based VMs via console](/content/en/cloud/aws/console.md) |
+| How-To        | [Deploy Arm based VMs via gcloud](/content/en/cloud/aws/gcloud.md) |
 
 
 ## References and Documentation
 
 | Type          | Content             |
 | ---           | ---                 |
-| Documentation | [Creating an AWS account](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html) |
-| Documentation | [Launcing instance using terraform](https://learn.hashicorp.com/tutorials/terraform/aws-build) |
+| Documentation | [Creating an Arm VM instance](https://cloud.google.com/compute/docs/instances/create-arm-vm-instance#startingcloud) |
 
 
-[<-- Return to Learning Path](/content/en/cloud/aws/#sections)
+[<-- Return to Learning Path](/content/en/cloud/GCP/#sections)
