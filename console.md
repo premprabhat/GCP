@@ -1,54 +1,49 @@
 ---
-title: "Deploy Graviton based EC2 instances using GUI"
+title: "Deploy Arm based VMs using GUI"
 type: docs
 weight: 2
 hide_summary: true
 description: >
-    Learn how to deploy Graviton based EC2 instances using GUI.
+    Learn how to deploy Arm based VMs using GUI..
 ---
 
-# How to deploy Graviton based EC2 instances via GUI
-Log in to your AWS account and open the EC2 Dashboard. To launch an instance, select Launch instance from the Dashboard.
+# How to deploy Arm based VMs via GUI
+Log in to your GCP account and in the Google Cloud console, go to the [VM instances page](https://console.cloud.google.com/compute/instances?_ga=2.159262650.1220602700.1668410849-523068185.1662463135).
 
 ![image](https://user-images.githubusercontent.com/87687468/189866780-e67c8a99-e5f2-445f-938c-a672cd926c4a.png)
    
-## Name and Tags
+## Select your project and click Continue.
 Name the instance.
     
 ![image](https://user-images.githubusercontent.com/87687468/192811901-40232129-2405-4a33-803c-1a9e40934b44.png)
 
-## Choose an Amazon Machine Image (AMI)
-Here we can select an Ubuntu AMI and change the architecture to Arm.
+## Click Create instance.
+    
+![image](https://user-images.githubusercontent.com/87687468/192811901-40232129-2405-4a33-803c-1a9e40934b44.png)
+
+## Specify a Name for your VM. For more information, see [Resource naming convention](https://cloud.google.com/compute/docs/naming-resources#resource-name-format).
    
 ![image](https://user-images.githubusercontent.com/87687468/192594550-95c51ac9-d1cd-4f0d-98f2-a1fce1a78b2d.png)
 
-Also select "64-bit (Arm)" from Architecture drop down
-   
-![image](https://user-images.githubusercontent.com/87687468/192595418-c96ad1e5-8a74-43f8-83c7-d5c19f14ff4a.png)
-
-## Choose an Instance Type
-For instance type, we select an Arm based t4g.nano instance as shown below. More information on Arm based Graviton instance types can be found on the [AWS Graviton page](https://aws.amazon.com/ec2/graviton/).
+## Choose a Zone for this VM that supports Tau T2A
+This series is available only in select regions and zones. More information on regions and zones at which it is available can be found [here](https://cloud.google.com/compute/docs/regions-zones#available).
    
 ![image](https://user-images.githubusercontent.com/87687468/192596029-21b7dcc2-917c-41d0-bda2-3763584f7f00.png)
  
-## SSH Key pair
-We can use a key pair to securely connect to our instance. We can choose from an existing key pair, or create a new one. It is generally preferred that instead of using the same key pair for all instances, you should create a new one for different groups of instances.
+## Select General-purpose from the Machine family options.
+Select T2A from the Series drop-down menu and a T2A Machine type from the drop-down menu.
    
 ![image](https://user-images.githubusercontent.com/87687468/189890580-0b647d1e-baad-4597-95ad-7fcad81e9324.png)
 
-For creating a new Key pair Go to > **Create a new pair** and then name it (e.g. demoserver). Then select the key type and format and press **Create key pair**
+## In the Boot disk section, click Change, and then do the following:
+On the Public images tab, choose the following:
+ * The default Debian-11-Arm64 image or any other supported Arm OS. Here we have chosen ubuntu 22.10 version.
+ * Boot disk type
+ * Boot disk size
 
-![image](https://user-images.githubusercontent.com/87687468/189891219-ac02d5df-d247-4adb-8e3d-03c0212b9356.png)
+Then click on select.
 
-Download the newly created Key Pair. Once it is downloaded, we can select it from the drop down list.
-   
-![image](https://user-images.githubusercontent.com/87687468/189892157-580783ad-f387-4f6e-83f6-793661078bbc.png)
-
-## Network setting
-Use the default VPC and Subnet.
-
-## Configure Security Group
-We can choose an existing security group or we can create a new security group. Below, we show how to create a new security group that allows SSH access to the        instance.
+## To create and start the VM, click Create.
    
 ![image](https://user-images.githubusercontent.com/87687468/189876379-1d9118c8-a9a6-4e6d-892a-e37443d37546.png)
    
