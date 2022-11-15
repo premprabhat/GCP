@@ -17,7 +17,6 @@ By the end of this learning path, you will be able to:
 ## Pre-requisites
 
 * An Google Cloud Platform(GCP) account
-* Install the latest version of the [Google Cloud CLI](https://cloud.google.com/compute/docs/gcloud-compute).
 
 ## Sections
 
