@@ -23,7 +23,6 @@ By the end of this learning path, you will be able to:
 
 |          Type | Content                       |
 | ---           | ---                                 |
-| How-To        | [Arm based VMs on GCP](/content/en/cloud/GCP/introduction.md)
 | How-To        | [Deploy Arm based VMs via console](/content/en/cloud/aws/console.md) |
 | How-To        | [Deploy Arm based VMs via gcloud](/content/en/cloud/aws/gcloud.md) |
 
