@@ -10,30 +10,29 @@ description: >
 # How to deploy Arm based VMs via GUI
 Log in to your GCP account and in the Google Cloud console, go to the [VM instances page](https://console.cloud.google.com/compute/instances?_ga=2.159262650.1220602700.1668410849-523068185.1662463135).
 
-![image](https://user-images.githubusercontent.com/87687468/189866780-e67c8a99-e5f2-445f-938c-a672cd926c4a.png)
+![h3](https://user-images.githubusercontent.com/67620689/202090364-2946214c-2347-4538-b2b0-3a36f45caee0.PNG)
    
-## Select your project and click Continue.
-Name the instance.
+## Select your project
     
-![image](https://user-images.githubusercontent.com/87687468/192811901-40232129-2405-4a33-803c-1a9e40934b44.png)
+![image](https://user-images.githubusercontent.com/67620689/202095985-103deaa4-610d-45ea-a84c-65af2bbfec41.PNG)
 
-## Click Create instance.
+## Click Create instance
     
-![image](https://user-images.githubusercontent.com/87687468/192811901-40232129-2405-4a33-803c-1a9e40934b44.png)
+![h3](https://user-images.githubusercontent.com/67620689/202090934-aa0aa2da-e0f7-4aea-b8db-bc4988b781b2.PNG)
 
 ## Specify a Name for your VM. For more information, see [Resource naming convention](https://cloud.google.com/compute/docs/naming-resources#resource-name-format).
-   
-![image](https://user-images.githubusercontent.com/87687468/192594550-95c51ac9-d1cd-4f0d-98f2-a1fce1a78b2d.png)
+
+![image4](https://user-images.githubusercontent.com/67620689/202098830-532b5dc8-f6b5-4cff-931c-ec41edd08516.PNG)
 
 ## Choose a Zone for this VM that supports Tau T2A
 This series is available only in select regions and zones. More information on regions and zones at which it is available can be found [here](https://cloud.google.com/compute/docs/regions-zones#available).
    
-![image](https://user-images.githubusercontent.com/87687468/192596029-21b7dcc2-917c-41d0-bda2-3763584f7f00.png)
- 
+![image1](https://user-images.githubusercontent.com/67620689/202097168-6208b6ae-3627-47b3-a397-7783769e6727.PNG)
+
 ## Select General-purpose from the Machine family options.
 Select T2A from the Series drop-down menu and a T2A Machine type from the drop-down menu.
    
-![image](https://user-images.githubusercontent.com/87687468/189890580-0b647d1e-baad-4597-95ad-7fcad81e9324.png)
+![image](https://user-images.githubusercontent.com/67620689/202092025-53aef76d-ee09-415a-a84b-fb21d6e329f3.PNG)
 
 ## In the Boot disk section, click Change, and then do the following:
 On the Public images tab, choose the following:
@@ -43,9 +42,11 @@ On the Public images tab, choose the following:
 
 Then click on select.
 
+![image2](https://user-images.githubusercontent.com/67620689/202097666-b618266c-3dde-49b8-adb5-887380066648.PNG)
+
 ## To create and start the VM, click Create.
    
-![image](https://user-images.githubusercontent.com/87687468/189876379-1d9118c8-a9a6-4e6d-892a-e37443d37546.png)
+![image3](https://user-images.githubusercontent.com/67620689/202098038-7bfb0b6c-af18-4d5c-92a8-ca90a57bc25b.PNG)
    
 ## Configure Storage
 By default, EC2 instances come with 8GiB of storage. You may want to increase this for scenarios that require log files and backups. In our case, we selected 25GiB of storage. Selecting a volume type of General Purpose SSD (gp2) is a good starting point. You can explore the different storage options after you understand the nature of your workload better.  
