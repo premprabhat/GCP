@@ -47,32 +47,15 @@ Then click on select.
 ## To create and start the VM, click Create.
    
 ![image3](https://user-images.githubusercontent.com/67620689/202098038-7bfb0b6c-af18-4d5c-92a8-ca90a57bc25b.PNG)
-   
-## Configure Storage
-By default, EC2 instances come with 8GiB of storage. You may want to increase this for scenarios that require log files and backups. In our case, we selected 25GiB of storage. Selecting a volume type of General Purpose SSD (gp2) is a good starting point. You can explore the different storage options after you understand the nature of your workload better.  
-   
-![image](https://user-images.githubusercontent.com/87687468/189878035-87d9721f-c58e-4ce7-800b-093d4d3e59ce.png)
-   
-Set Delete On Termination to yes. This will ensure that the volume is deleted and will not incur charges on you account once the instance is terminated.
-   
-## Review and Launch
-Check the details in the summary box and press launch.
-
-![image](https://user-images.githubusercontent.com/87687468/189878839-3ef022f7-2be7-458a-b0ce-20cf5ee0bcaa.png)
 
 ## SSH into the launched instance
-We can login into created instance using SSH. To do that, we require access to the key pair (Pem file) which we have downloaded. By default, pem file permission is set to `rw-r--r--`. This is not allowed for SSH Pem files. We have to change the permission for this Pem file to 400, so that only the current user can read this Pem file.
+Run the ssh command into your machine.
 
 ```
-$ chmod 400 demoserver.pem
+ssh-keygen -t  rsa -C <username>
 ```
-   
-Now, only the owner of the Pem file can read it. In fact, these are permissions that a Pem file expects. Select the Instance by checking the box of the instance you want to connect to and GO TO » connect.
-   
-![image](https://user-images.githubusercontent.com/87687468/192154311-55889d4e-6dd2-4bc3-81a9-95cca7356e0a.png)
-   
-Here in SSH Client, you will see instructions that explain how to SSH into the instance.
-   
+
+Add the public key into your VM.   
 ![image](https://user-images.githubusercontent.com/87687468/190095052-41851f3d-61db-486f-9c00-2f504587bdcc.png)
    
 If in your terminal, you are in the same directory where the Pem file is present. you will not need the full path for the pem file. Use following command to ssh an instance:
