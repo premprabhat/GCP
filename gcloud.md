@@ -13,6 +13,11 @@ This guide will show how to deploy a Arm based VM using gcloud.
 ## Pre-requisites
 * An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
+## Login into gcloud
+```
+  gcloud auth login
+```
+
 ## Deploy Arm based VM with gcloud command
 ```
   gcloud compute instances create VM_NAME --project=PROJECT_NAME --zone=ZONE --machine-type=MACHINE_TYPE --image-project=IMAGE_PROJECT [--image=IMAGE | --imagefamily=IMAGE_FAMILY] --network-interface=nic-type=GVNIC
