@@ -13,40 +13,20 @@ This guide will show how to deploy a Arm based VM using gcloud.
 ## Pre-requisites
 * An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
-## Azure-cli installation
-Follow [azure installation steps](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt).
-
-## Azure authentication
-
-The installation of Terraform on your Desktop/Laptop needs to communicate with Azure. Thus, Terraform needs to be authenticated.
-
-For authentication, we need to run `az login` which provides code to run in browser.
-
-![image](https://user-images.githubusercontent.com/42368140/196459799-6278da9d-e91c-4dc1-b8c3-c327dfa0394b.png)
-
-Run in browser as below:
-![image](https://user-images.githubusercontent.com/42368140/196459871-9a3e1c1e-0582-4d55-838a-03e397d68ed7.png)
-
-You will see details in command line as below after logging in browser
-![image](https://user-images.githubusercontent.com/42368140/197953418-ddb9cd41-72b9-4a97-88f1-1f490644f36b.PNG)
+## Deploy Arm based VM with gcloud command
+```
+  gcloud compute instances create VM_NAME --project=PROJECT_NAME --zone=ZONE --machine-type=MACHINE_TYPE --image-project=IMAGE_PROJECT [--image=IMAGE | --imagefamily=IMAGE_FAMILY] --network-interface=nic-type=GVNIC
+```
 
 ## Generate key-pair(public key, private key) using ssh keygen
-
-### Generate the public key and private key
-Before using Terraform, we need to first generate the key-pair(public key, private key) using ssh-keygen. Then we are going to associate both public and private keys with Arm VMs.
 
 Generate the key pair using the following command:
 ```
   ssh-keygen -t rsa -b 2048
 ``` 
 
-By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/azure/** followed by key name **azure_key**).
-
-**Output when a key pair is generated:**
-
-![image](https://user-images.githubusercontent.com/42368140/196460197-587b96b5-f108-432b-85d6-9cf9976d26a1.PNG)
-
-**Note:** We have to use public key **azure_key.pub** inside the Terraform file to provision/start the Arm VMs and private key **azure_key** to connect to VM.
+## Add the public key in GUI
+Select Project and then go to Metadata. Select SSH keys and then add the data of <file>.
 
 ## Image References
 Before provisioning Terraform infrastructure, we need to get required image details. For reference, please follow https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cli-ps-findimage. We need to get publisher, offer, sku and version details to create a VM.
