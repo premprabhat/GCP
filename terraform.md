@@ -12,13 +12,16 @@ This guide will show how to deploy a Arm based VM using Terraform.
 
 ## Pre-requisites
 * An [installation of Terraform](https://www.terraform.io/cli/install/apt)
-* An Azure portal account
-* An installation of [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt).
 
-## Azure-cli installation
-Follow [azure installation steps](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt).
+## Creating a service account
+In the Google Cloud console, go to the [Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?_ga=2.68028177.1220602700.1668410849-523068185.1662463135) page.
 
-## Azure authentication
+Select a project. 
+
+Enter a service account name to display and description in the Google Cloud console.
+
+If you do not want to set access controls now, click Done to finish creating the service account. To set access controls now, click Create and continue.
+
 
 The installation of Terraform on your Desktop/Laptop needs to communicate with Azure. Thus, Terraform needs to be authenticated.
 
