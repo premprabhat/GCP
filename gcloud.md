@@ -28,7 +28,9 @@ Generate the key pair using the following command:
 ## Add the public key in GUI
 In VM instance page select your Project. In Metadata click on SSH keys and then add the data of file name.
 
+## SSH into the launched instance
 If in your terminal, you are in the same directory where the Pem file is present. you will not need the full path for the pem file. Use following command to ssh an instance:
+
 ```
   ssh -i "demoserver.pem" ubuntu@<Public IP/DNS address>
 ```
