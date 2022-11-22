@@ -65,14 +65,14 @@ Add below code in `main.tf` file:
 
 ```
   resource "google_service_account" "default" {
-  project = "snappy-byway-368307"
+  project = "project_id"
   account_id   = "service_account_id"
   display_name = "odidev"
   }
 
   resource "google_compute_instance" "default" {
-    project = "snappy-byway-368307"
-    name         = "instance-arm"
+    project = "project_id"
+    name         = "instance_name"
     machine_type = "t2a-standard-1"
     zone         = "us-central1-a"
 
@@ -83,8 +83,8 @@ Add below code in `main.tf` file:
     }
     network_interface {
       network = "default"
-	   nic_type {
-        GVNIC
+      nic_type {
+         GVNIC
       }
     }
   }
