@@ -43,7 +43,7 @@ Before using Terraform, we need to first generate the key-pair(public key, priva
 
 Generate the key pair using the following command:
 ```
-  ssh-keygen -t rsa -b 2048
+  ssh-keygen -t rsa -C <username>
 ``` 
 
 By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/azure/** followed by key name **azure_key**).
@@ -65,21 +65,22 @@ Add below code in `main.tf` file:
 
 ```
   resource "google_service_account" "default" {
+  project = "snappy-byway-368307"
   account_id   = "service_account_id"
   display_name = "odidev"
   }
 
   resource "google_compute_instance" "default" {
+    project = "snappy-byway-368307"
     name         = "instance-arm"
     machine_type = "t2a-standard-1"
     zone         = "us-central1-a"
 
     boot_disk {
       initialize_params {
-      image = "Ubuntu 20.04 LTS"
+      image = "ubuntu-os-cloud/ubuntu-2004-lts-arm64"
       }
     }
-
     network_interface {
       network = "default"
 	   nic_type {
@@ -125,9 +126,9 @@ In the Google Cloud console, go to the [VM instances page](https://console.cloud
 ![image](https://user-images.githubusercontent.com/42368140/196461182-bde106db-1def-4270-be53-df97b87be21b.PNG)
 
 ### Use private key to SSH into Azure VM
-Connect to Azure VM using the private key(/home/ubuntu/azure/azure_key) created through `ssh-keygen`.
+Connect to VM using the private key(/home/ubuntu/azure/azure_key) created through `ssh-keygen`.
 
-Use the connect command mentioned in the azure VM **GOTO >> connect** section:
+Go to VM instance page. In Metadata click on SSH keys and then add the data of file name.
 
 ![image](https://user-images.githubusercontent.com/42368140/196461435-bf928a89-4c3f-453b-8d20-91c384e6552f.PNG)
 
