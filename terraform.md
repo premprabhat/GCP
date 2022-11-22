@@ -12,6 +12,7 @@ This guide will show how to deploy a Arm based VM using Terraform.
 
 ## Pre-requisites
 * An [installation of Terraform](https://www.terraform.io/cli/install/apt)
+* An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
 ## Creating a service account
 In the Google Cloud console, go to the [Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?_ga=2.68028177.1220602700.1668410849-523068185.1662463135) page.
