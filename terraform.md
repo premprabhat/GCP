@@ -15,14 +15,8 @@ This guide will show how to deploy a Arm based VM using Terraform.
 * An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
 ## Creating a service account
-In the Google Cloud console, go to the [Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?_ga=2.68028177.1220602700.1668410849-523068185.1662463135) page.
 
-Select a project. 
-
-Enter a service account name to display and description in the Google Cloud console.
-
-If you do not want to set access controls now, click Done to finish creating the service account. To set access controls now, click Create and continue.
-
+gcloud auth application-default login
 
 The installation of Terraform on your Desktop/Laptop needs to communicate with Azure. Thus, Terraform needs to be authenticated.
 
@@ -46,13 +40,13 @@ Generate the key pair using the following command:
   ssh-keygen -t rsa -C <username>
 ``` 
 
-By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/azure/** followed by key name **azure_key**).
+By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/gcp/** followed by key name **gcp_key**).
 
 **Output when a key pair is generated:**
 
 ![image](https://user-images.githubusercontent.com/42368140/196460197-587b96b5-f108-432b-85d6-9cf9976d26a1.PNG)
 
-**Note:** We have to use public key **azure_key.pub** inside the Terraform file to provision/start the Arm VMs and private key **azure_key** to connect to VM.
+**Note:** We have to use public key **gcp_key.pub** inside the Terraform file to provision/start the Arm VMs and private key **gcp_key** to connect to VM.
 
 ## Terraform infrastructure
 Start by creating an empty `main.tf` file.
