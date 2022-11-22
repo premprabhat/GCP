@@ -48,16 +48,18 @@ Then click on select.
    
 ![image3](https://user-images.githubusercontent.com/67620689/202098038-7bfb0b6c-af18-4d5c-92a8-ca90a57bc25b.PNG)
 
-## SSH into the launched instance
-Run the ssh command into your machine.
+## Generate key-pair(public key, private key) using ssh keygen
+Generate the key pair using the following command:
 
 ```
 ssh-keygen -t  rsa -C <username>
 ```
 
-Add the public key into your VM.   
+## Add the public key into your VM.
+In VM instance page select your Project. In Metadata click on SSH keys and then add the data of file name.
 ![image](https://user-images.githubusercontent.com/87687468/190095052-41851f3d-61db-486f-9c00-2f504587bdcc.png)
    
+## SSH into the launched instance
 If in your terminal, you are in the same directory where the Pem file is present. you will not need the full path for the pem file. Use following command to ssh an instance:
    
 ```
