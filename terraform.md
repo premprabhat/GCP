@@ -10,34 +10,27 @@ description: >
 # How to deploy Arm based VMs with Terraform
 This guide will show how to deploy a Arm based VM using Terraform.
 
-## Pre-requisites
+## Prerequisites
 * An [installation of Terraform](https://www.terraform.io/cli/install/apt)
 * An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
-## Creating a service account
-
+## Acquire user credentials
+```
 gcloud auth application-default login
+```
+Open the URL in the browser and copy the authentication code.
 
-The installation of Terraform on your Desktop/Laptop needs to communicate with Azure. Thus, Terraform needs to be authenticated.
-
-For authentication, we need to run `az login` which provides code to run in browser.
-
-![image](https://user-images.githubusercontent.com/42368140/196459799-6278da9d-e91c-4dc1-b8c3-c327dfa0394b.png)
-
-Run in browser as below:
 ![image](https://user-images.githubusercontent.com/42368140/196459871-9a3e1c1e-0582-4d55-838a-03e397d68ed7.png)
 
-You will see details in command line as below after logging in browser
+Now paste the authentication code as below:
 ![image](https://user-images.githubusercontent.com/42368140/197953418-ddb9cd41-72b9-4a97-88f1-1f490644f36b.PNG)
 
 ## Generate key-pair(public key, private key) using ssh keygen
-
-### Generate the public key and private key
 Before using Terraform, we need to first generate the key-pair(public key, private key) using ssh-keygen. Then we are going to associate both public and private keys with Arm VMs.
 
 Generate the key pair using the following command:
 ```
-  ssh-keygen -t rsa -C <username>
+  ssh-keygen -t rsa
 ``` 
 
 By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/gcp/** followed by key name **gcp_key**).
@@ -49,10 +42,6 @@ By default, the above command will generate the public as well as private key at
 **Note:** We have to use public key **gcp_key.pub** inside the Terraform file to provision/start the Arm VMs and private key **gcp_key** to connect to VM.
 
 ## Terraform infrastructure
-Start by creating an empty `main.tf` file.
-
-### Create required resources
-
 Add resources required to create a VM in `main.tf`.
 
 Add below code in `main.tf` file:
@@ -61,7 +50,7 @@ Add below code in `main.tf` file:
   resource "google_service_account" "default" {
   project = "project_id"
   account_id   = "service_account_id"
-  display_name = "odidev"
+  display_name = "name_to_be_displayed"
   }
 
   resource "google_compute_instance" "default" {
@@ -75,6 +64,7 @@ Add below code in `main.tf` file:
       image = "ubuntu-os-cloud/ubuntu-2004-lts-arm64"
       }
     }
+
     network_interface {
       network = "default"
       nic_type {
@@ -119,17 +109,17 @@ In the Google Cloud console, go to the [VM instances page](https://console.cloud
 
 ![image](https://user-images.githubusercontent.com/42368140/196461182-bde106db-1def-4270-be53-df97b87be21b.PNG)
 
-### Use private key to SSH into Azure VM
-Connect to VM using the private key(/home/ubuntu/azure/azure_key) created through `ssh-keygen`.
+### Use private key to SSH into VM
+Connect to VM using the private key(/home/ubuntu/azure/gcp_key) created through `ssh-keygen`.
 
-Go to VM instance page. In Metadata click on SSH keys and then add the data of file name.
+Go to VM instance page. In Metadata click on SSH keys and then add the public key.
 
 ![image](https://user-images.githubusercontent.com/42368140/196461435-bf928a89-4c3f-453b-8d20-91c384e6552f.PNG)
 
 Run following command to connect to VM through SSH:
 
 ```
-  ssh -i "/home/ubuntu/azure/azure_key" azureuser@<Public IP>
+  ssh -i "/home/ubuntu/azure/gcp_key" gcpuser@<Public IP>
 ```
 
 ![image](https://user-images.githubusercontent.com/42368140/196461586-4e2a93ba-2379-4d7c-b737-b0918eaa54da.PNG)
