@@ -36,7 +36,7 @@ Select T2A from the Series drop-down menu and a T2A Machine type from the drop-d
 
 ## In the Boot disk section, click Change, and then do the following:
 On the Public images tab, choose the following:
- * The default Debian-11-Arm64 image or any other supported Arm OS. Here we have chosen ubuntu 22.10 version.
+ * The default Debian-11-Arm64 image or any other supported Arm OS. Here we have chosen ubuntu 20.04 version.
  * Boot disk type
  * Boot disk size
 
