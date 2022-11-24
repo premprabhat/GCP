@@ -12,6 +12,7 @@ This guide will show how to deploy a Arm based VM using Terraform.
 
 ## Prerequisites
 * An [installation of Terraform](https://www.terraform.io/cli/install/apt)
+* A Google cloud account
 * An [installation of Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 
 ## Acquire user credentials
@@ -38,8 +39,6 @@ By default, the above command will generate the public as well as private key at
 **Output when a key pair is generated:**
 
 ![image](https://user-images.githubusercontent.com/42368140/196460197-587b96b5-f108-432b-85d6-9cf9976d26a1.PNG)
-
-**Note:** We have to use public key **gcp_key.pub** inside the Terraform file to provision/start the Arm VMs and private key **gcp_key** to connect to VM.
 
 ## Terraform infrastructure
 Add resources required to create a VM in `main.tf`.
@@ -77,6 +76,7 @@ Add below code in `main.tf` file:
 ## Terraform commands
 
 ### Initialize Terraform
+Run `terraform init` to initialize the Terraform deployment. This command downloads all the modules required to manage your resources.
 
 ```
   terraform init
@@ -97,8 +97,8 @@ Run `terraform plan` to create an execution plan.
 * The optional -out parameter allows you to specify an output file for the plan. Using the -out parameter ensures that the plan you reviewed is exactly what is applied.
 
 ### Apply a Terraform execution plan
-
 Run `terraform apply` to apply the execution plan to your cloud infrastructure. Below command creates all required infrastructure.
+
 ```
   terraform apply main.tfplan
 ```
