@@ -32,7 +32,7 @@ This series is available only in select regions and zones. More information on r
 ## Select General-purpose from the Machine family options.
 Select T2A from the Series drop-down menu and a T2A Machine type from the drop-down menu.
    
-![image](https://user-images.githubusercontent.com/67620689/202092025-53aef76d-ee09-415a-a84b-fb21d6e329f3.PNG)
+![image](https://user-images.githubusercontent.com/67620689/203740482-d820ced1-5eeb-4c07-99a3-18a7a7511966.PNG)
 
 ## In the Boot disk section, click Change, and then do the following:
 On the Public images tab, choose the following:
@@ -42,7 +42,7 @@ On the Public images tab, choose the following:
 
 Then click on select.
 
-![image2](https://user-images.githubusercontent.com/67620689/202097666-b618266c-3dde-49b8-adb5-887380066648.PNG)
+![c3](https://user-images.githubusercontent.com/67620689/203740594-e118f88a-52da-41f2-b5bd-4a3d35990536.PNG)
 
 ## To create and start the VM, click Create.
    
