@@ -4,11 +4,11 @@ type: docs
 weight: 2
 hide_summary: true
 description: >
-    Learn how to deploy Arm based VMs using GUI..
+    Learn how to deploy Arm based VMs using GUI.
 ---
 
 # How to deploy Arm based VMs via GUI
-Log in to your GCP account and in the Google Cloud console, go to the [VM instances page](https://console.cloud.google.com/compute/instances?_ga=2.159262650.1220602700.1668410849-523068185.1662463135).
+Log in to your google account and in the Google Cloud console, go to the [VM instances page](https://console.cloud.google.com/compute/instances?_ga=2.159262650.1220602700.1668410849-523068185.1662463135).
 
 ![h3](https://user-images.githubusercontent.com/67620689/202090364-2946214c-2347-4538-b2b0-3a36f45caee0.PNG)
    
@@ -16,7 +16,7 @@ Log in to your GCP account and in the Google Cloud console, go to the [VM instan
     
 ![image](https://user-images.githubusercontent.com/67620689/202095985-103deaa4-610d-45ea-a84c-65af2bbfec41.PNG)
 
-## Click Create instance
+## Click on Create instance
     
 ![h3](https://user-images.githubusercontent.com/67620689/202090934-aa0aa2da-e0f7-4aea-b8db-bc4988b781b2.PNG)
 
@@ -60,9 +60,9 @@ In VM instance page select your Project. In Metadata click on SSH keys and then 
 ![image](https://user-images.githubusercontent.com/87687468/190095052-41851f3d-61db-486f-9c00-2f504587bdcc.png)
    
 ## SSH into the launched instance
-If in your terminal, you are in the same directory where the Pem file is present. you will not need the full path for the pem file. Use following command to ssh an instance:
+If in the terminal, you are in the same directory where the private file is present. you will not need the full path for the pem file. Use following command to ssh an instance:
    
 ```
 ssh -i "demoserver.pem" ubuntu@<Public IP/DNS address>
 ```
-[<-- Return to Learning Path](/content/en/cloud/azure/#sections)
+[<-- Return to Learning Path](/content/en/cloud/gcp/#sections)
