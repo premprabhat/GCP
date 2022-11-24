@@ -52,7 +52,7 @@ Then click on select.
 Generate the key pair using the following command:
 
 ```
-ssh-keygen -t  rsa -C <username>
+ssh-keygen -t rsa -b 2048
 ```
 ![image](https://user-images.githubusercontent.com/67620689/203761628-d7f4ade8-a132-4af9-b012-778c82b6d94d.PNG)
 
