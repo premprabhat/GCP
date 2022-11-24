@@ -16,7 +16,7 @@ By the end of this learning path, you will be able to:
 
 ## Prerequisites
 
-* An Google Cloud Platform(GCP) account
+* A Google Cloud account
 
 ## Sections
 
