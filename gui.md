@@ -64,7 +64,7 @@ In VM instance page select your Project. In Metadata click on SSH keys and then 
 If in the terminal, you are in the same directory where the private file is present. you will not need the full path for the private file. Use following command to ssh an instance:
    
 ```
-ssh -i "demoserver.pem" ubuntu@<Public IP/DNS address>
+ssh -i "id_rsa" ubuntu@<Public IP/DNS address>
 ```
 ![image](https://user-images.githubusercontent.com/67620689/203761659-9be08da4-f537-4971-b9aa-51f7c1eddcb4.PNG)
 
