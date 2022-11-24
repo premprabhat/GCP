@@ -57,8 +57,8 @@ ssh-keygen -t  rsa -C <username>
 ![image](https://user-images.githubusercontent.com/67620689/203761628-d7f4ade8-a132-4af9-b012-778c82b6d94d.PNG)
 
 ## Add the public key into your VM.
-In VM instance page select your Project. In Metadata click on SSH keys and then add the data of file name.
-![image](https://user-images.githubusercontent.com/87687468/190095052-41851f3d-61db-486f-9c00-2f504587bdcc.png)
+In VM instance page select your Project. In Metadata click on SSH keys and then add the public key.
+![image](https://user-images.githubusercontent.com/67620689/203762984-abfcecf4-87d6-4a06-b546-ad955dee4bc6.PNG)
    
 ## SSH into the launched instance
 If in the terminal, you are in the same directory where the private file is present. you will not need the full path for the private file. Use following command to ssh an instance:
