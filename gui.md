@@ -54,6 +54,7 @@ Generate the key pair using the following command:
 ```
 ssh-keygen -t  rsa -C <username>
 ```
+![image](https://user-images.githubusercontent.com/67620689/203761628-d7f4ade8-a132-4af9-b012-778c82b6d94d.PNG)
 
 ## Add the public key into your VM.
 In VM instance page select your Project. In Metadata click on SSH keys and then add the data of file name.
@@ -65,4 +66,6 @@ If in the terminal, you are in the same directory where the private file is pres
 ```
 ssh -i "demoserver.pem" ubuntu@<Public IP/DNS address>
 ```
+![image](https://user-images.githubusercontent.com/67620689/203761659-9be08da4-f537-4971-b9aa-51f7c1eddcb4.PNG)
+
 [<-- Return to Learning Path](/content/en/cloud/gcp/#sections)
