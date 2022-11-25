@@ -46,31 +46,33 @@ Add resources required to create a VM in `main.tf`.
 Add below code in `main.tf` file:
 
 ```
-  resource "google_service_account" "default" {
-  project = "project_id"
+resource "google_service_account" "service_account" {
   account_id   = "service_account_id"
-  display_name = "name_to_be_displayed"
-  }
+  display_name = "Service Account"
+}
 
-  resource "google_compute_instance" "default" {
-    project = "project_id"
-    name         = "instance_name"
-    machine_type = "t2a-standard-1"
-    zone         = "us-central1-a"
+resource "google_compute_project_metadata_item" "ssh-keys" {
+  user = "gcpuser"
+  key   = "ssh-keys"
+  value = "file_location"
+}
 
-    boot_disk {
-      initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-2004-lts-arm64"
-      }
-    }
+resource "google_compute_instance" "vm_instance" {
+  name         = "instance-arm"
+  machine_type = "t2a-standard-1"
+  zone         = "us-central1-a"
 
-    network_interface {
-      network = "default"
-      nic_type {
-         GVNIC
-      }
+  boot_disk {
+    initialize_params {
+      image = "Ubuntu 20.04 LTS"
     }
   }
+
+  network_interface {
+    network = "default"
+	nic_type = "GVNIC"
+  }
+}
 ```
 
 ## Terraform commands
