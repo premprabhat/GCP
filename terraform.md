@@ -31,7 +31,7 @@ Before using Terraform, we need to first generate the key-pair(public key, priva
 
 Generate the key pair using the following command:
 ```
-  ssh-keygen -t rsa
+  ssh-keygen -t rsa -b 2048
 ``` 
 
 By default, the above command will generate the public as well as private key at location **~/.ssh**. But we can override the end destination with a custom path(Eg: **/home/ubuntu/gcp/** followed by key name **gcp_key**).
