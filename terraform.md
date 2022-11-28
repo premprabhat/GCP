@@ -64,13 +64,13 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "Ubuntu 20.04 LTS"
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
   }
 
   network_interface {
     network = "default"
-	nic_type = "GVNIC"
+    nic_type = "GVNIC"
   }
 }
 ```
