@@ -129,6 +129,6 @@ Run `terraform destroy` to delete all resources created.
 ```
   terraform destroy
 ```
-![image](https://user-images.githubusercontent.com/42368140/196463306-1e559148-4b9a-414c-b862-06c6aa33557e.PNG)
+![image](https://user-images.githubusercontent.com/67620689/204245617-e95de65d-0fad-4bf2-95c8-8816f03d9fc2.PNG)
 
 [<-- Return to Learning Path](/content/en/cloud/azure/#sections)
