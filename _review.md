@@ -12,13 +12,13 @@
 review:
     - questions:
         question: >
-            Amazon EKS work with AWS Fargate.
+            If I accidentally delete my instance, I can retrieve it.
         answers:
             - "True"
             - "False"
-        correct_answer: 1                     
+        correct_answer: 2                     
         explination: >
-            You can run Kubernetes applications as serverless containers using AWS Fargate and Amazon EKS.
+            No, instances that have been deleted cannot be retrieved. However, if an instance is simply stopped, you can start it again.
 
     - questions:
         question: >
@@ -29,16 +29,6 @@ review:
         correct_answer: 2                     
         explination: >
             Terraform is not specific to AWS and was created by HashiCorp.
-
-    -  questions:
-        question: >
-            Kubernetes cluster can be updated to a new version.
-        answers:
-            - "True"
-            - "False"
-        correct_answer: 1                     
-        explination: >
-            Amazon EKS performs managed, in-place cluster upgrades for both Kubernetes and Amazon EKS platform versions.
 
 
 # ================================================================================
