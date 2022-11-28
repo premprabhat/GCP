@@ -23,6 +23,9 @@ Open the URL in the browser and copy the authentication code.
 
 ![image](https://user-images.githubusercontent.com/67620689/204243048-f413184a-6478-480c-825d-241c5607353e.PNG)
 
+diff
+![image](https://user-images.githubusercontent.com/67620689/204244780-6c0542ab-4240-4be3-8272-fb1e6e38ec08.PNG)
+
 Now paste the authentication code as below:
 ![image](https://user-images.githubusercontent.com/67620689/204242841-58e30570-1f88-4755-b3d2-32d7052a9b5d.PNG)
 
