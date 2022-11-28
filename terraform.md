@@ -1,14 +1,14 @@
 ---
-title: "Deploy Arm based VMs with Terraform"
-type: docs
-weight: 3
-hide_summary: true
-description: >
-   Learn how to Deploy Arm based VMs with Terraform.
+# User change
+title: "Automate virtual machine creation with Terraform"
+
+weight: 3 # 1 is first, 2 is second, etc.
+
+# Do not modify these elements
+layout: "learningpathall"
 ---
 
-# How to deploy Arm based VMs with Terraform
-This guide will show how to deploy a Arm based VM using Terraform.
+# Deploy a Arm based virtual machine using Terraform.
 
 ## Prerequisites
 * An [installation of Terraform](https://www.terraform.io/cli/install/apt)
