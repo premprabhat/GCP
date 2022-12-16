@@ -12,7 +12,7 @@ layout: "learningpathall"
 
 ## Prerequisites
 * A Google cloud account
-* An installation of [AWS CLI](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html)
+* An installation of [Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk#deb)
 * An installation of [Terraform](https://www.terraform.io/cli/install/apt)
 
 ## Introduction to Jump Server
