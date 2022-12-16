@@ -16,10 +16,10 @@ layout: "learningpathall"
 * An installation of [Terraform](https://www.terraform.io/cli/install/apt)
 
 ## Introduction to Jump Server
-Bastion hosts provide an external facing point of entry into a network containing private network instances.This host can provide a single point of fortification or audit and can be started and stopped to enable or disable inbound SSH. By using a bastion host, you can connect to a VM that does not have an external IP address. This approach allows you to connect to a development environment or manage the database instance for your external application, for example, without configuring additional firewall rules. By default, SSH on VMs is configured to use private keys for authentication. When using a bastion host, you log into the bastion host first, and then into your target private VM. Because of this two-step login, which is why bastion hosts are sometimes called "jump servers.
+Bastion hosts provide an external facing point of entry into a network containing private network instances.This host can provide a single point of fortification or audit and can be started and stopped to enable or disable inbound SSH. By using a bastion host, you can connect to a VM that does not have an external IP address. This approach allows you to connect to a development environment or manage the database instance for your external application, for example, without configuring additional firewall rules. By default, SSH on VMs is configured to use private keys for authentication. When using a bastion host, you log into the bastion host first, and then into your target private VM. Because of this two-step login, which is why bastion hosts are sometimes called "jump servers".
 
 ## Deploying Arm instances on GCP and providing access via Jump Server
-For deploying Arm instances on AWS and providing access via Jump Server, the Terraform configuration is broken into 7 files: ec2.tf, outputs.tf, provider.tf, security_groups.tf, ssh_key_gen.tf, variables.tf and VPC_subnet_IG_RT.tf
+For deploying Arm instances on AWS and providing access via Jump Server, the Terraform configuration is broken into 6 files: iam.tf, instances.tf, main.tf, variables.tf, versions.tf and terraform.tfvars
 
 **ssh_key_gen.tf** creates a private key (id_rsa) and public key (id_rsa.pub) and saves the it in `~/.ssh/` path. It is necessary to save the key in order to SSH into Bastion Host at a later time.
 ```console
